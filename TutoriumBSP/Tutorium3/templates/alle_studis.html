@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alle Studierenden</title>
+</head>
+<body>
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Alle Studierenden</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Matrikelnummer</th>
+                <th>Vorname</th>
+                <th>Nachname</th>
+                <th>Email</th>
+                <th>Seminar</th>
+                <th>Studiengang</th>
+                <th>Abschluss</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for studi in allstudis %}
+            <tr>
+                <td>{{ studi[0] }}</td>
+                <td>{{ studi[1] }}</td>
+                <td>{{ studi[2] }}</td>
+                <td>{{ studi[3] }}</td>
+                <td>{{ studi[5] }}</td>
+                <td>{{ studi[6] }}</td>
+                <td>{{ studi[7] }}</td>
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+</body>
+</html>

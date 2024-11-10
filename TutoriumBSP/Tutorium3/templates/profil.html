@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil</title>
+</head>
+<body>
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Hallo {{ studi_data[0][1] }}</h1>
+    <h2>Deine Daten:</h2>
+    {% if studi_data %}
+        <p>Matrikelnummer:: {{ studi_data[0][0] }}</p>
+        <p>Vorname: {{ studi_data[0][1] }}</p>
+        <p>Nachname: {{ studi_data[0][2] }}</p>
+        <p>Email: {{ studi_data[0][3] }}</p>
+        <p>Passwort: {{ studi_data[0][4] }}</p>
+        <p>Seminar: {{ studi_data[0][5] }}</p>
+        <p>Studiengang: {{ studi_data[0][6] }}, {{ studi_data[0][7] }}</p>
+    {% endif %}
+    <!--<a class="nav-link" href="/profil_bearbeiten">bearbeiten</a>--
+{% endblock %}
+</body>
+</html>

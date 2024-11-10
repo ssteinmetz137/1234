@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>Willkommen auf unserer Website!</h1>
+<p>Bitte loggen Sie sich ein, um fortzufahren:</p>
+<form action="/profil" method="post">
+    <label for="email">E-Mail:</label>
+    <input type="email" id="email" name="email" required><br><br>
+    <label for="password">Passwort:</label>
+    <input type="password" id="password" name="password" required><br><br>
+    <input type="submit" value="Anmelden">
+</form>
+{% endblock %}

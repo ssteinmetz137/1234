@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alle Seminare</title>
+</head>
+<body>
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Alle Seminare</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Titel</th>
+                <th>Dozent</th>
+                <th>Semester</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for seminar in seminare %}
+            <tr>
+                <td>{{ seminar[0] }}</td>
+                <td> <a href="/seminar_details/1">{{ seminar[1] }}</a> </td>
+                <td>{{ seminar[2] }} {{ seminar[3] }} {{ seminar[4] }}</td>
+                <td>{{ seminar[7] }}</td>
+                <td>{{ seminar[8] }}</td>
+
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+</body>
+</html>

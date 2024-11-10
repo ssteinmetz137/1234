@@ -1,0 +1,76 @@
+/* Allgemeine Stile */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+p {
+    color: #666;
+}
+
+/* Formularstil */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Linkstil */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+.navbar-nav {
+    display: flex;
+    justify-content: space-between;
+    list-style: none; /* Entfernt die Punkte */
+}
+.nav-link {
+    color: #343a40; /* Farbe der Links */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #007bff; /* Farbe der Links beim Hovern */
+}
+.navbar-brand {
+    display: flex;
+    justify-content: space-between;
+    list-style: none; /* Entfernt die Punkte */
+}

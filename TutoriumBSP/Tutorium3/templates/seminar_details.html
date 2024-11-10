@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% extends "layout.html" %}
+{% block content %}
+    <div>
+        <h2>{{ seminar_details[1] }}</h2> <!-- Titel -->
+        <p><strong>ID:</strong> {{ seminar_details[1] }}</p> <!-- Dozent ID -->
+        <p><strong>Titel:</strong> {{ seminar_details[2] }}</p> <!-- Oberbegriff -->
+        <p><strong>Beschreibung:</strong> {{ seminar_details[3] }}</p> <!-- Beschreibung -->
+        <p><strong>Datei Pfad:</strong> {{ seminar_details[4] }}</p> <!-- Datei Pfad -->
+        <p><strong>Zugewiesener Student:</strong> {{ seminar_details[5] }}</p> <!-- Zugewiesener Student -->
+        <p><strong>Semester:</strong> {{ seminar_details[6] }}</p> <!-- Semester -->
+        <p><strong>Status:</strong> {{ seminar_details[7] }}</p> <!-- Status -->
+        <!-- Hier können weitere Details je nach Bedarf angezeigt werden -->
+    </div>
+    {% if session.get("role") == "dozent" %}
+        <a class="nav-link" href="/seminar_bearbeiten">bearbeiten</a>
+    {% endif %}
+{% endblock %}
+</body>
+</html>

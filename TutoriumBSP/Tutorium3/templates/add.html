@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrierung</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+{% extends "layout.html" %}
+{% block content %}
+<h2>Benutzer hinzufügen</h2>
+<form action="./add" method="post">
+
+    <div class="form-group">
+        <label for="first_name">Vorname</label>
+        <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Vorname" value="{{ form_data['first_name'] }}">
+    </div>
+    <div class="form-group">
+        <label for="last_name">Nachname</label>
+        <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Nachname" value="{{ form_data['last_name'] }}">
+    </div>
+    <div class="form-group">
+        <label for="matrikelnummer">Matrikelnummer</label>
+        <input type="text" class="form-control" id="matrikelnummer"  name="matrikelnummer" placeholder="12345678" value="{{ form_data['matrikelnummer'] }}">
+    </div>
+    <div class="form-group">
+        <label for="email">E-Mail</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="E-Mail" value="{{ form_data['email'] }}">
+    </div>
+    <div class="form-group">
+        <label for="password">Passwort</label>
+        <input type="password" class="form-control" id="password"  name="password" placeholder="***********" value="{{ form_data['password'] }}">
+        <small id="passwordHelp" class="form-text text-muted">Das Passwort muss min. 8 Zeichen lang sein und min. einen Klein- und einen Großbuchstaben und ein Sonderzeichen enthalten.</small>
+    </div>
+
+    <div class="form-group">
+        <label>Belegtes Seminar</label><br>
+        <input type="radio" id="seminar_iis" name="seminar" value="IIS" {% if form_data['seminar'] == 'IIS' %}checked{% endif %}>
+        <label for="seminar_iis">IIS</label>
+        <input type="radio" id="seminar_wbs" name="seminar" value="WBS" {% if form_data['seminar'] == 'WBS' %}checked{% endif %}>
+        <label for="seminar_wbs">WBS</label><br>
+    </div>
+    <div class="form-group">
+        <label>Abschluss</label><br>
+        <input type="radio" id="stud_bsc" name="abschluss" value="B.Sc." {% if form_data['abschluss'] == 'B.Sc.' %}checked{% endif %}>
+        <label for="stud_bsc">B.Sc.</label>
+        <input type="radio" id="stud_msc" name="abschluss" value="M.Sc." {% if form_data['abschluss'] == 'M.Sc.' %}checked{% endif %}>
+        <label for="stud_msc">M.Sc.</label><br>
+    </div>
+    <div class="form-group">
+        <label>Studiengang</label><br>
+        <input type="radio" id="fach_imit" name="studiengang" value="IMIT" {% if form_data['studiengang'] == 'IMIT' %}checked{% endif %}>
+        <label for="fach_imit">IMIT</label>
+        <input type="radio" id="fach_imitai" name="studiengang" value="IMIT-AI" {% if form_data['studiengang'] == 'IMIT-AI' %}checked{% endif %}>
+        <label for="fach_imitai">IMIT-AI</label>
+        <input type="radio" id="fach_winf" name="studiengang" value="WINF" {% if form_data['studiengang'] == 'WINF' %}checked{% endif %}>
+        <label for="fach_winf">WINF</label>
+        <input type="radio" id="fach_iim" name="studiengang" value="IIM" {% if form_data['studiengang'] == 'IIM' %}checked{% endif %}>
+        <label for="fach_iim">IIM</label>
+        <input type="radio" id="fach_ikü" name="studiengang" value="IKÜ" {% if form_data['studiengang'] == 'IKÜ' %}checked{% endif %}>
+        <label for="fach_ikü">IKÜ</label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Absenden</button>
+</form>
+{% endblock %}
+</body>
+</html>
